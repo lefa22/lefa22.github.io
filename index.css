@@ -1,0 +1,47 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    font-size: 100px;
+    margin: 0px;
+    padding-bottom: 4vh;
+}
+
+h2 {
+    padding-bottom: 1vh;
+}
+
+a {
+    color: rgb(123, 224, 117);
+    text-decoration: none;
+}
+
+#section1 {
+    color: rgb(123, 224, 117);
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-block {
+    max-width: 70rem;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 40px;
+}

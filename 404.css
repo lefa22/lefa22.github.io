@@ -1,0 +1,57 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+
+    color: rgb(123, 224, 117);
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    font-size: 100px;
+    margin: 0px;
+    padding-top: 4vh;
+    padding-bottom: 0px;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: rgb(123, 224, 117);
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#container1 {
+    padding-bottom: 4vh;
+}
+
+#border {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 0;
+
+    border: 5px dashed rgb(123, 224, 117);
+    border-radius: 20px;
+    height: calc(100vh - 50px);
+    width: calc(100vw - 50px);
+}
