@@ -1,5 +1,3 @@
-address = window.location.search;
+address = window.location.toString();
 
-document.getElementById("windowLocationSearch").innerText = address;
-
-console.log(address);
+document.getElementById("windowLocation").innerText = address;
