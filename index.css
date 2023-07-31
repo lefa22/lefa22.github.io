@@ -59,4 +59,11 @@ a {
     mix-blend-mode: difference;
     transition: transform .2s;
     pointer-events: none;
-  }
+}
+
+#github {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+}
