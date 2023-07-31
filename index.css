@@ -45,3 +45,18 @@ a {
     padding-right: 10vw;
     padding-bottom: 40px;
 }
+
+#invertedcursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    top: 0;
+    left: -20px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    mix-blend-mode: difference;
+    transition: transform .2s;
+    pointer-events: none;
+  }

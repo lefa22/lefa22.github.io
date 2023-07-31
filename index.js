@@ -1,10 +1,3 @@
-address = window.location.toString();
-
-document.getElementById("windowLocation").innerText = address;
-
-
-// cursor
-
 let cursor = document.getElementById("invertedcursor");
 let buttons = document.getElementsByClassName("cursorButton");
 let onButton = false;
@@ -43,3 +36,6 @@ window.onpointermove = event => {
     }, { duration: 400, fill: "forwards" });
   }
 }
+
+
+  
