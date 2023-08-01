@@ -8,18 +8,24 @@
         <link href="index.css" rel="stylesheet">
     </head>
     <body>
-        <div style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; pointer-events: none;">
-            <div id="invertedcursor"></div>
+        <div class="cursorBox">
+            <div id="backgroundcursor"></div>
         </div>
         
-        <div id="section1", class="section">
+        <div id="section1", class="section" style="isolation: isolate;">
             <h1>lefa22</h1>
             <div class="text-block">
                 <h2>Projects:</h2>
                 <p><a href="#" class="cursorButton">- nothing</a></p>
             </div>
+            <a href="https://github.com/lefa22" id="github" class="cursorButton">GitHub</a>
+
+            
+            <div class="cursorBox">
+                <div id="invertedcursor"></div>
+            </div>
+
         </div>
         <script src="index.js"></script>
-        <a href="https://github.com/lefa22" id="github" class="cursorButton">GitHub</a>
     </body>
 </html>

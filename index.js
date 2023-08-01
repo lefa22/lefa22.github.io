@@ -1,9 +1,12 @@
 let cursor = document.getElementById("invertedcursor");
+let bgCursor = document.getElementById("backgroundcursor");
 let buttons = document.getElementsByClassName("cursorButton");
 let onButton = false;
 let hoveredElement = null;
 
 window.onpointermove = event => {
+  const { clientX, clientY } = event;
+
   for (let i = 0; i < buttons.length; i++) {
      if (buttons.item(i).matches(':hover')) {
       onButton = true
@@ -14,9 +17,13 @@ window.onpointermove = event => {
       onButton = false
      }
   }
+
+  bgCursor.animate({
+    left: `${clientX}px`,
+    top: `${clientY}px`,
+  }, { duration: 50, fill: "forwards" });
+
   if (!onButton) {
-    const { clientX, clientY } = event;
-    
     cursor.animate({
       left: `${clientX}px`,
       top: `${clientY}px`,
