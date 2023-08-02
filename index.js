@@ -70,9 +70,9 @@ function mouseOnHeader(status) {
     if (status && !calledOnce) {
       letters.forEach(letter => {
         letter.animate({
-          left: `${Math.random()*50-25}px`,
-          top: `${Math.random()*50-25}px`
-        }, { duration: 400, fill: "forwards"});
+          left: `${Math.random()*75-36}px`,
+          top: `${Math.random()*75-36}px`
+        }, { duration: 300, fill: "forwards"});
         console.log(letter)
         calledOnce = true;
     });
@@ -82,7 +82,7 @@ function mouseOnHeader(status) {
       letter.animate({
         left: `0px`,
         top: `0px`
-      }, { duration: 400, fill: "forwards" });
+      }, { duration: 300, fill: "forwards" });
       console.log(letter)
       calledOnce = false;
   });
