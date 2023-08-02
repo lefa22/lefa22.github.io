@@ -34,6 +34,7 @@ window.onpointermove = event => {
   }
   else if (onButton) {
     let rect = hoveredElement.getBoundingClientRect()
+    
     cursor.animate({
       left: `${rect.left + rect.width/2}px`,
       top: `${rect.top + rect.height/2}px`,
@@ -44,5 +45,3 @@ window.onpointermove = event => {
   }
 }
 
-
-  
