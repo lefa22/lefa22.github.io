@@ -102,13 +102,4 @@ a {
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0px 0px 130px 20px rgba(122, 224, 117, 0.801);
-    animation: githubButton 20s ease infinite;
-}
-
-@keyframes githubButton {
-    0% {bottom: 30px; right: 30px; rotate: 10deg;}
-    25% {bottom: 40px; right: 50px; rotate: 5deg;}
-    50% {bottom: 50px; right: 40px; rotate: -5deg;}
-    75% {bottom: 40px; right: 30px; rotate: 0deg;}
-    100% {bottom: 30px; right: 30px; rotate: 10deg;}
 }
