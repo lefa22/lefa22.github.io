@@ -1,3 +1,14 @@
+::-moz-selection { /* Code for Firefox */
+    color: rgb(20, 20, 20);
+    background: rgb(123, 224, 117);
+  }
+  
+  ::selection {
+    color: rgb(20, 20, 20);
+    background: rgb(123, 224, 117);
+  }
+
+
 html {
     margin: 0px;
     padding: 0px;
