@@ -45,4 +45,10 @@ window.onpointermove = event => {
 }
 
 
-  
+function nothing(element) {
+  element.style.textShadow = "0px 0px 50px rgb(123, 224, 117)"
+  setTimeout(() => {document.getElementById("nothing").parentElement.style.margin = "0px"}, 700)
+  setTimeout(() => {document.getElementById("nothing").parentElement.style.opacity = "0"}, 700)
+  setTimeout(() => {document.getElementById("nothing").parentElement.remove()}, 1200)
+}
+document.getElementById("nothing").parentElement.style.height = "0px"  
