@@ -1,3 +1,8 @@
+::selection {
+    color: rgb(34, 34, 34);
+    background: rgba(122, 224, 117, 0.699);
+}
+
 html {
     margin: 0px;
     padding: 0px;
@@ -96,4 +101,34 @@ a {
     bottom: 20px;
     right: 20px;
     font-size: 20px;
+}
+
+#nothing {
+    color: rgba(123, 224, 117, 0) !important; 
+    text-shadow: 0px 0px 0px rgb(123, 224, 117);
+    transition: all ease 2s;
+}
+
+#nothingP {
+    transition: all ease 500ms;
+}
+
+#animationBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -150px;
+    left: -80px;
+    scale: 0.5;
+    filter: invert(67%) sepia(100%) saturate(220.3%) hue-rotate(70.4deg);
+    transition: all linear 3050ms;
 }
