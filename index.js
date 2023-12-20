@@ -51,4 +51,4 @@ function nothing(element) {
   setTimeout(() => {document.getElementById("nothing").parentElement.style.opacity = "0"}, 700)
   setTimeout(() => {document.getElementById("nothing").parentElement.remove()}, 1200)
 }
-document.getElementById("nothing").parentElement.style.height = "0px"  
+document.getElementById("nothing").parentElement.style.height = "0px"
