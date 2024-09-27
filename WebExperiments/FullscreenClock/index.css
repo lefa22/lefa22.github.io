@@ -1,0 +1,177 @@
+::selection {
+    color: rgb(34, 34, 34);
+    background: rgba(122, 224, 117, 0.699);
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+
+    color: rgb(123, 224, 117);
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    width: 100vw;
+}
+
+#container {
+	/* Center the text in the viewport. */
+	position: absolute;
+	margin: auto;
+	width: 100vw;
+	height: 12vw;
+	top: 0;
+	bottom: 0;
+	
+	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+	filter: url(#threshold) url(#smooth);
+}
+
+#p1, #p2 {
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+    margin: 0;
+	
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10vw;
+	font-weight: 600;
+	
+	text-align: center;
+	user-select: none;
+}
+
+#p1 span:not(.points), #p2 span:not(.points) {
+    display: inline-block;
+    width: 7vw;
+}
+
+a {
+    color: rgb(123, 224, 117);
+    text-decoration: none;
+}
+
+#blurContainer {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	backdrop-filter: blur(1.2vw);
+
+	transition: backdrop-filter 2000ms ease;
+}
+
+#popupContainer {
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+
+#popup {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.85);
+	border-radius: 20px;
+	padding: 30px;
+	padding-right: 60px;
+	padding-top: 25px;
+	opacity: 100%;
+	top: 0px;
+	transition: background-color 1000ms ease, top 1000ms ease, border 1000ms ease, box-shadow 1000ms ease;
+	border: 3px rgb(123, 224, 117) solid;
+	box-shadow: 0px 0 30px rgb(20, 20, 20);
+}
+
+#webExperiments {
+	margin: 0;
+	margin-bottom: -7px;
+	font-size: 14px;
+	opacity: 60%;
+}
+
+#popup h2 {
+	margin-top: 0;
+	margin-bottom: 23px;
+}
+
+#links {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 17px;
+}
+
+#copyright {
+	font-size: 12px;
+	position: absolute;
+	bottom: 7px;
+	right: 10px;
+	opacity: 80%;
+}
+
+#copyright:hover {
+	text-decoration: underline;
+}
+
+#links a {
+	display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+	margin-bottom: 9px;
+}
+
+.linkArrow {
+    padding-right: 4px;
+	font-size: 15px;
+    transition: padding 500ms ease;
+}
+
+#links a:hover {
+	.linkArrow {
+		padding-left: 10px;
+		padding-right: 7px;
+	}
+}
+
+#close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: white;
+	cursor: pointer;
+}
+
+#popup div {
+	transition: opacity 1000ms ease;
+}
+
+#firefoxPopupContainer {
+	display: flex;
+	justify-content: center;
+}
+
+#firefoxPopup {
+	position: relative;
+	background-color: rgb(197, 89, 89);
+	color: rgb(20, 20, 20);
+	font-weight: 510;
+	top: 0;
+	padding: 18px;
+	padding-right: 45px;
+	margin-top: 2.5vh;
+	border-radius: 10px;
+	box-shadow: 0 0 200px rgba(197, 89, 89, 0.589);
+	transition: top 2000ms ease;
+}
+
+#firefoxPopup p {
+	margin: 0;
+}
+
+#firefoxPopup span {
+	color: black;
+}

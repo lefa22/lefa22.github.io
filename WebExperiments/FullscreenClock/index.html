@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0"/>
+        <link href="index.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <p id="p1"><span id="s1_1">0</span><span id="s1_2">0</span><span id="s1_3" class="points">:</span><span id="s1_4">0</span><span id="s1_5">0</span><span id="s1_6" class="points">:</span><span id="s1_7">0</span><span id="s1_8">0</span></p>
+            <p id="p2"><span id="s2_1">0</span><span id="s2_2">0</span><span id="s2_3" class="points">:</span><span id="s2_4">0</span><span id="s2_5">0</span><span id="s2_6" class="points">:</span><span id="s2_7">0</span><span id="s2_8">0</span></p>
+        </div>
+        <div id="blurContainer">
+            <div id="popupContainer">
+                <div id="popup">
+                    <div>
+                        <span id="close" class="material-symbols-rounded" onclick="closePopup()">close</span>
+                        <p id="webExperiments">Web Experiments</p>
+                        <h2>Fullscreen Clock</h2>
+                        <div id="links">
+                            <a href="/"><span class="material-symbols-rounded linkArrow">arrow_forward</span>Homepage</a>
+                            <a href="https://github.com/lefa22/lefa22.github.io/tree/main/WebExperiments/FullscreenClock"><span class="material-symbols-rounded linkArrow">arrow_forward</span>Github</a>
+                        </div>
+                        <a href="https://github.com/lefa22" id="copyright">© 2024 lefa22</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="firefoxPopupContainer">
+            <div id="firefoxPopup" hidden>
+                <span id="close" class="material-symbols-rounded" onclick="closeFirefoxPopup()">close</span>
+                <p>For a smoother experience, use a different browser.</p>
+            </div>
+        </div>
+
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix
+                    in="SourceGraphic"
+                    type="matrix"
+                    values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            0 0 0 255 -140"/>
+                </filter>
+                <filter id="smooth">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"></feGaussianBlur>   
+                    <feColorMatrix
+                    in="blur"
+                    type="matrix"
+                    values=" 1 0 0 0 0
+                             0 1 0 0 0
+                             0 0 1 0 0
+                             0 0 0 29 -1"
+                    result="goo"/>
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+        <script src="index.js"></script>
+    </body>
+</html>
