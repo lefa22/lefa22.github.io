@@ -5,26 +5,20 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="/global.css" rel="stylesheet">
         <link href="index.css" rel="stylesheet">
     </head>
     <body>
-        <div class="cursorBox" id="backgroundCursorBox">
-            <div id="backgroundcursor"></div>
+        <div id="cursorBox">
+            <div id="invertedcursor"></div>
         </div>
-        
-        <div id="section1", class="section" style="isolation: isolate;">
+        <div id="section1", class="section">
             <h1>lefa22</h1>
             <div class="text-block">
                 <h2>Projects:</h2>
                 <a href="/WebExperiments/FullscreenClock/index.html" class="cursorButton">- Fullscreen Clock</a>
             </div>
             <a href="https://github.com/lefa22" id="github" class="cursorButton">GitHub</a>
-
-            
-            <div class="cursorBox">
-                <div id="invertedcursor"></div>
-            </div>
-
         </div>
         <svg id="filter" xmlns="http://www.w3.org/2000/svg">
             <filter id="two-color-flatten">
@@ -43,5 +37,6 @@
               </filter>
         </svg>
         <script src="index.js"></script>
+        <script src="cursor.js"></script>
     </body>
 </html>
