@@ -35,7 +35,7 @@ a {
 
 #section1 {
     color: rgb(123, 224, 117);
-    /* background-color: rgb(20, 20, 20); */
+    background-color: rgb(20, 20, 20);
     margin: 0px;
     padding: 0px;
     height: 100vh;
@@ -46,7 +46,7 @@ a {
     justify-content: center;
 
     background-size: 10px 10px;
-    background-image: radial-gradient(circle, hsla(118, 31%, 35%, 0) 1px, rgb(20, 20, 20) 1px);
+    /* background-image: radial-gradient(circle, hsla(118, 31%, 35%, 0) 1px, rgb(20, 20, 20) 1px); */
 }
 
 .text-block {
@@ -69,9 +69,11 @@ a {
     mix-blend-mode: difference;
     transition: transform .2s;
     pointer-events: none;
+    filter: url(#two-color-flatten);
 }
 
 #backgroundcursor {
+    display: none;
     position: absolute;
     width: 300px;
     height: 300px;
@@ -84,6 +86,10 @@ a {
     mix-blend-mode: difference;
     transition: transform .2s;
     pointer-events: none;
+}
+
+#backgroundCursorBox {
+    display: none;
 }
 
 .cursorBox {
@@ -111,4 +117,8 @@ a {
 
 #nothingP {
     transition: all ease 500ms;
+}
+
+#filter {
+    display: none;
 }

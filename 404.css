@@ -106,7 +106,7 @@ a {
 }
 
 #invertedcursor {
-    display: none;
+    /* display: none; */
     position: absolute;
     width: 40px;
     height: 40px;
@@ -119,4 +119,9 @@ a {
     mix-blend-mode: difference;
     transition: transform .2s;
     pointer-events: none;
-  }
+    filter: url(#two-color-flatten);
+}
+
+#filter {
+    display: none;
+}

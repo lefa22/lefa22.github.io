@@ -137,6 +137,14 @@ a {
 	}
 }
 
+#popupText {
+	width: 300px;
+}
+
+#popupText a {
+	text-decoration: underline;
+}
+
 #close {
 	position: absolute;
 	top: 15px;

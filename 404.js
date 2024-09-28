@@ -19,6 +19,7 @@ window.onpointermove = event => {
      }
      else {
       onButton = false
+      hoveredElement = null;
      }
   }
   if (!onButton) {
@@ -43,6 +44,21 @@ window.onpointermove = event => {
     }, { duration: 400, fill: "forwards" });
   }
 }
+
+function cursorFitToButton() {
+  if (hoveredElement != null) {
+    let rect = hoveredElement.getBoundingClientRect()
+    cursor.animate({
+      left: `${rect.left + rect.width/2}px`,
+      top: `${rect.top + rect.height/2}px`,
+      borderRadius: `5px`,
+      width: `${rect.width + 10}px`,
+      height: `${rect.height + 10}px`
+    }, { duration: 400, fill: "forwards" });
+  }
+}
+
+setInterval(cursorFitToButton, 200)
 
 function mouseOnHeading() {
   for (let i = 0; i < 3; i++) {
