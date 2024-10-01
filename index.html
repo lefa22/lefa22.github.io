@@ -22,17 +22,17 @@
         </div>
         <svg id="filter" xmlns="http://www.w3.org/2000/svg">
             <filter id="two-color-flatten">
-                <feColorMatrix
-                  type="matrix"
-                  values="0.33 0.33 0.33 0 0
-                          0.33 0.33 0.33 0 0
-                          0.33 0.33 0.33 0 0
-                          0    0    0    1 0" />
                 <feComponentTransfer>
                   <feFuncR type="table" tableValues=" 0.078 0.482"/>
                   <feFuncG type="table" tableValues=" 0.078 0.878"/>
                   <feFuncB type="table" tableValues=" 0.078 0.458"/>
                   <feFuncA type="identity"/>
+                </feComponentTransfer>
+                <feComponentTransfer>
+                    <feFuncR type="linear" slope="3" intercept="-1"/>
+                    <feFuncG type="linear" slope="3" intercept="-1"/>
+                    <feFuncB type="linear" slope="3" intercept="-1"/>
+                    <feFuncA type="identity"/>
                 </feComponentTransfer>
               </filter>
         </svg>

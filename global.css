@@ -1,6 +1,6 @@
 ::selection {
-    color: rgb(34, 34, 34);
-    background: rgba(123, 224, 117, 0.699);
+    color: var(--gray-background);
+    background: var(--green-color);
 }
 
 html {
@@ -37,16 +37,15 @@ body {
     position: absolute;
     width: 40px;
     height: 40px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0);
     border-radius: 50%;
     top: 0;
     left: -20px;
     transform: translate(-50%, -50%);
-    z-index: 100;
-    mix-blend-mode: difference;
+    z-index: 1;
     transition: transform .2s ease;
     pointer-events: none;
-    filter: url(#two-color-flatten);
+    backdrop-filter: invert(100%) grayscale(100%) url(#two-color-flatten);
 }
 
 a {
@@ -55,5 +54,6 @@ a {
 }
 
 #filter {
-    display: none;
+    position: absolute;
+    height: 0;
 }
