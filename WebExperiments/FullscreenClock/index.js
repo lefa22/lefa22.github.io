@@ -3,6 +3,7 @@ let time = new Date();
 let previousSeconds = -1
 let previousClock = [-1, -1,  -1, -1,  -1, -1]
 let morph = [true, true, true, true, true, true]
+const noPopup = window.location.hash == "#noPopup"
 
 let p1 = [document.getElementById("s1_1"), document.getElementById("s1_2"), document.getElementById("s1_4"), document.getElementById("s1_5"), document.getElementById("s1_7"), document.getElementById("s1_8")]
 let p2 = [document.getElementById("s2_1"), document.getElementById("s2_2"), document.getElementById("s2_4"), document.getElementById("s2_5"), document.getElementById("s2_7"), document.getElementById("s2_8")]
@@ -144,6 +145,11 @@ function closeFirefoxPopup() {
     document.getElementById("firefoxPopup").style.top = "-400px"
 }
 
-if (navigator.userAgent.search("Firefox") > -1) {
+if (navigator.userAgent.search("Firefox") > -1 && !noPopup) {
     document.getElementById("firefoxPopup").removeAttribute("hidden")
 }
+
+if (noPopup) {
+    closePopup();
+}
+
