@@ -8,6 +8,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0" />
         <link href="/global.css" rel="stylesheet">
         <link href="/404.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
     <body >
         <div id="cursorBox">
@@ -25,19 +29,19 @@
         <div id="border"></div>
         <svg id="filter" xmlns="http://www.w3.org/2000/svg">
             <filter id="two-color-flatten">
-                <feColorMatrix
-                  type="matrix"
-                  values="0.33 0.33 0.33 0 0
-                          0.33 0.33 0.33 0 0
-                          0.33 0.33 0.33 0 0
-                          0    0    0    1 0" />
                 <feComponentTransfer>
-                  <feFuncR type="table" tableValues=" 0.078 0.482"/>
-                  <feFuncG type="table" tableValues=" 0.078 0.878"/>
-                  <feFuncB type="table" tableValues=" 0.078 0.458"/>
-                  <feFuncA type="identity"/>
+                    <feFuncR type="table" tableValues=" 0.078 0.482"/>
+                    <feFuncG type="table" tableValues=" 0.078 0.878"/>
+                    <feFuncB type="table" tableValues=" 0.078 0.458"/>
+                    <feFuncA type="identity"/>
                 </feComponentTransfer>
-              </filter>
+                <feComponentTransfer>
+                    <feFuncR type="linear" slope="3" intercept="-1"/>
+                    <feFuncG type="linear" slope="3" intercept="-1"/>
+                    <feFuncB type="linear" slope="3" intercept="-1"/>
+                    <feFuncA type="identity"/>
+                </feComponentTransfer>
+                </filter>
         </svg>
         <script src="/404.js"></script>
         <script src="/cursor.js"></script>

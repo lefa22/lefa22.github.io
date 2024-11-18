@@ -1,7 +1,11 @@
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+
 let cursor = document.getElementById("invertedcursor");
 let buttons = document.getElementsByClassName("cursorButton");
 let onButton = false;
 let hoveredElement = null;
+let animationDuration = isReduced ? 0 : 1;
+
 
 window.onpointermove = event => {
     for (let i = 0; i < buttons.length; i++) {
@@ -24,7 +28,7 @@ window.onpointermove = event => {
             borderRadius: `50%`,
             width: `30px`,
             height: `30px`
-        }, { duration: 500, fill: "forwards" });
+        }, { duration: 500*animationDuration, fill: "forwards" });
     }
     else if (onButton) {
         cursorFitToButton()
@@ -40,7 +44,7 @@ function cursorFitToButton() {
             borderRadius: `5px`,
             width: `${rect.width + 10}px`,
             height: `${rect.height + 10}px`
-        }, { duration: 400, fill: "forwards" });
+        }, { duration: 400*animationDuration, fill: "forwards" });
     }
 }
   
