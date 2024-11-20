@@ -26,6 +26,18 @@ h2 {
     padding-left: 10vw;
     padding-right: 10vw;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-block h2 {
+    margin: 0px;
+}
+
+.text-block a {
+    display: inline-block;
+    width: fit-content;
 }
 
 #github {

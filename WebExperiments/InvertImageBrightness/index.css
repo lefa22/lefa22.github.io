@@ -1,0 +1,112 @@
+::selection {
+    color: rgb(34, 34, 34);
+    background: rgba(122, 224, 117, 0.699);
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(123, 224, 117);
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    width: 100vw;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#imageInput {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid rgb(123, 224, 117);
+    border-radius: 5px;
+    color: rgb(123, 224, 117);
+    font-size: 15px;
+    width: 400px;
+}
+
+#imageInput::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0;
+}
+
+#imageContainer {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+#originalImage, #invertedImage {
+    max-width: 45vw;
+    max-height: calc(90vh - 150px);
+    min-width: 10vw;
+    min-height: 10vh;
+    width: fit-content;
+    height: fit-content;
+    object-fit: contain;
+    border-radius: 5px;
+    transition: opacity 1s ease;
+    /* image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges; */
+}
+
+#originalImage.invisible, #invertedImage.invisible {
+    transition: opacity 0s ease;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+#dropZone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border: 2px dashed rgba(123, 224, 117, 0.3);
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+#dropZone.dragover {
+    border-color: rgb(123, 224, 117);
+}
+
+#dropText {
+    color: rgba(123, 224, 117, 0.5);
+    font-size: 14px;
+}
+
+#bottomText {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 15px;
+    background-color: rgb(20, 20, 20, 0.5);
+}
+
+.dotSpan {
+    margin: 0px 5px;
+    font-weight: 900;
+}

@@ -37,13 +37,13 @@ body {
     position: absolute;
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(122, 224, 117, 0);
     border-radius: 50%;
     top: 0;
     left: -20px;
     transform: translate(-50%, -50%);
     z-index: 1;
-    transition: transform .2s ease;
+    transition: transform .2s ease, background 500ms ease;
     pointer-events: none;
     backdrop-filter: invert(100%) grayscale(100%) url(#two-color-flatten);
 }
@@ -56,4 +56,15 @@ a {
 #filter {
     position: absolute;
     height: 0;
+}
+
+.cursorText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gray-background);
+    font-size: 0px;
+    transition: font-size 300ms ease;
+    text-shadow: 0px 0px 30px var(--green-color);
 }

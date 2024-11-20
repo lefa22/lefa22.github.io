@@ -13,33 +13,15 @@
         <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
-        <div id="cursorBox">
-            <div id="invertedcursor"></div>
-        </div>
         <div id="section1", class="section">
             <h1>lefa22</h1>
             <div class="text-block">
                 <h2>Projects:</h2>
                 <a href="/WebExperiments/FullscreenClock/index.html" class="cursorButton">- Fullscreen Clock</a>
+                <a href="/WebExperiments/InvertImageBrightness/index.html" class="cursorButton">- Invert Image Brightness</a>
             </div>
             <a href="https://github.com/lefa22" id="github" class="cursorButton">GitHub</a>
         </div>
-        <svg id="filter" xmlns="http://www.w3.org/2000/svg">
-            <filter id="two-color-flatten">
-                <feComponentTransfer>
-                  <feFuncR type="table" tableValues=" 0.078 0.482"/>
-                  <feFuncG type="table" tableValues=" 0.078 0.878"/>
-                  <feFuncB type="table" tableValues=" 0.078 0.458"/>
-                  <feFuncA type="identity"/>
-                </feComponentTransfer>
-                <feComponentTransfer>
-                    <feFuncR type="linear" slope="3" intercept="-1"/>
-                    <feFuncG type="linear" slope="3" intercept="-1"/>
-                    <feFuncB type="linear" slope="3" intercept="-1"/>
-                    <feFuncA type="identity"/>
-                </feComponentTransfer>
-              </filter>
-        </svg>
         <script src="index.js"></script>
         <script src="cursor.js"></script>
     </body>
