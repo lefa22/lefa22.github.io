@@ -72,7 +72,6 @@ window.onpointermove = event => {
         }
     }
     if (cursorText.textContent != "" && !onIcon) {
-        cursorText.textContent = "";
         cursor.style.backdropFilter = `invert(100%) grayscale(100%) url(#two-color-flatten)`;
         cursorText.style.fontSize = `0px`;
         cursor.style.backgroundColor = `rgba(122, 224, 117, 0)`;
@@ -101,10 +100,10 @@ window.onpointermove = event => {
             width: `100px`,
             height: `100px`
         }, { duration: 500*animationDuration, fill: "forwards" });
-        cursor.style.backdropFilter = `invert(100%) grayscale(100%) url(#two-color-flatten) blur(10px)`;
+        cursor.style.backdropFilter = `invert(100%) grayscale(100%) url(#two-color-flatten) blur(3px)`;
         cursorText.style.fontSize = `80px`;
         cursorText.textContent = hoveredElement.dataset.cursorIcon;
-        cursor.style.backgroundColor = `rgba(122, 224, 117, 0.3)`;
+        cursor.style.backgroundColor = `rgba(122, 224, 117, 0.6)`;
         if (navigator.userAgent.search("Firefox") > -1) {
             cursor.style.backgroundColor = `rgba(122, 224, 117, 1)`;
         }
