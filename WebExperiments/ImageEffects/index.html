@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Invert Image Brightness</title>
+        <title>Image Effects</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -12,20 +12,24 @@
     <body>
         <div id="container">
             <div id="dropZone">
+                <div id="effects">
+                    <span class="activeEffect cursorButton" onclick="changeEffect('invert')">Invert</span>
+                    <span class="cursorButton" onclick="changeEffect('decolor')">Decolor</span>
+                </div>
                 <input type="file" id="imageInput" accept="image/*" class="cursorButton">
                 <div id="dropText">click above or drag and drop image here</div>
             </div>
             <div id="imageContainer">
                 <img id="originalImage" class="invisible" alt="Upload an image">
-                <img id="invertedImage" class="invisible cursorIcon" data-cursor-icon="download" alt="Inverted image" onclick="downloadInvertedImage()">
+                <img id="invertedImage" class="invisible" data-cursor-icon="download" alt="Inverted image" onclick="downloadInvertedImage()">
             </div>
             <div id="bottomText">
-                <span>Invert Image Brightness by </span>
+                <span>Image Effects by </span>
                 <span><a class="cursorButton" href="https://github.com/lefa22">lefa22</a></span>
                 <span class="dotSpan">·</span>
                 <span><a class="cursorButton" href="/">Homepage</a></span>
                 <span class="dotSpan">·</span>
-                <span><a class="cursorButton" href="https://github.com/lefa22/lefa22.github.io/tree/main/WebExperiments/InvertImageBrightness">GitHub</a></span>
+                <span><a class="cursorButton" href="https://github.com/lefa22/lefa22.github.io/tree/main/WebExperiments/ImageEffects">GitHub</a></span>
             </div>
         </div>
         <script src="index.js"></script>

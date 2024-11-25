@@ -3,6 +3,9 @@ const originalImage = document.getElementById('originalImage');
 const invertedImage = document.getElementById('invertedImage');
 const dropZone = document.getElementById('dropZone');
 let imageName = '';
+let currentEffect = "invert";
+let effectFileNameChange = "inverted";
+let lastEvent = null;
 
 imageInput.addEventListener('change', handleFile);
 
@@ -27,11 +30,29 @@ dropZone.addEventListener('drop', (e) => {
         
         imageInput.files = dataTransfer.files;
         
-        handleFile({ target: { files: [file] } });
+        // Pass the correct event object to handleFile
+        handleFile({ target: { files: dataTransfer.files } });
     }
 });
 
 function handleFile(e) {
+    if ((!e.target.files || !e.target.files[0])) {
+        console.log('Selection was canceled');
+        originalImage.classList.add('invisible');
+        invertedImage.classList.add('invisible');
+        invertedImage.classList.remove("cursorIcon")
+        updateCursorLists()
+        return;
+    }
+    if (!e.target.files[0].type.startsWith('image/')) {
+        imageInput.style.color = "var(--red-error)"
+        imageInput.style.borderColor = "var(--red-error)"
+    }
+    else {
+        imageInput.style.color = "var(--green-color)"
+        imageInput.style.borderColor = "var(--green-color)"
+    }
+    lastEvent = e;
     invertedImage.classList.add('invisible');
     const file = e.target.files[0];
     if (file) {
@@ -84,15 +105,71 @@ function handleFile(e) {
                     invertedImage.style.maxHeight = 'calc(90vh - 150px)';
                 }
                 originalImage.src = event.target.result;
-                invertImage(event.target.result);
+                if (currentEffect == "invert") {
+                    invertImage(event.target.result);
+                }
+                else if (currentEffect == "decolor") {
+                    noColorImage(event.target.result)
+                }
                 setTimeout(() => {
                     invertedImage.classList.remove('invisible');
+                    invertedImage.classList.add("cursorIcon")
+                    updateCursorLists()
                 }, 50);
             };
             img.src = event.target.result;
         };
         reader.readAsDataURL(file);
     }
+}
+
+function noColorImage(src) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    
+    img.onload = function() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        
+        // Draw original image
+        ctx.drawImage(img, 0, 0);
+        
+        // Get image data
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        
+        // Invert brightness while preserving colors
+        for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            let pixelvalue;
+            
+            const grayscale = 0.299 * r + 0.587 * g + 0.114 * b;
+
+
+            if (grayscale/255 > Math.random()) {
+                pixelvalue = 255
+            }
+            else {
+                pixelvalue = 0
+            }
+                
+            // Set RGB values to grayscale
+            data[i] = pixelvalue;     // Red
+            data[i + 1] = pixelvalue; // Green
+            data[i + 2] = pixelvalue; // Blue
+        }
+        
+        // Put the modified image data back
+        ctx.putImageData(imageData, 0, 0);
+        
+        // Update inverted image
+        invertedImage.src = canvas.toDataURL();
+    };
+    
+    img.src = src;
 }
 
 function invertImage(src) {
@@ -196,6 +273,26 @@ function hslToRgb(h, s, l) {
 function downloadInvertedImage() {
     const a = document.createElement('a');
     a.href = invertedImage.src;
-    a.download = imageName.split('.').slice(0, -1).join('.') + '-inverted.' + imageName.split('.').pop();
+    let fileType = (imageName.split('.').pop() == "svg") ? "png" : imageName.split('.').pop()
+    a.download = imageName.split('.').slice(0, -1).join('.') + '-' + effectFileNameChange + '.' + fileType;
     a.click();
+}
+
+function changeEffect(newEffect) {
+    Array.from(document.getElementById("effects").children).forEach(child => {
+        child.classList.remove("activeEffect")
+    });
+    currentEffect = newEffect
+    if (currentEffect == "invert") {
+        effectFileNameChange = "inverted"
+        document.getElementById("effects").children[0].classList.add("activeEffect")
+
+    }
+    else if (currentEffect == "decolor") {
+        effectFileNameChange = "decolored"
+        document.getElementById("effects").children[1].classList.add("activeEffect")
+    }
+    if (lastEvent != null) {
+        handleFile(lastEvent)
+    }
 }

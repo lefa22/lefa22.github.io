@@ -122,5 +122,10 @@ function cursorFitToButton() {
         }, { duration: 400*animationDuration, fill: "forwards" });
     }
 }
+
+function updateCursorLists() {
+    let buttons = document.getElementsByClassName("cursorButton");
+    let icons = document.getElementsByClassName("cursorIcon");
+}
   
 setInterval(cursorFitToButton, 200)
