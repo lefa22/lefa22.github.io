@@ -1,12 +1,12 @@
 html {
     margin: 0px;
     padding: 0px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     margin: 0px;
     padding: 0px;
-    font-family: 'Montserrat', sans-serif;
     color: rgb(123, 224, 117);
     background-color: rgb(20, 20, 20);
     height: 100vh;
@@ -30,7 +30,8 @@ body {
     border: 2px solid rgb(123, 224, 117);
     border-radius: 5px;
     color: rgb(123, 224, 117);
-    font-size: 15px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
     width: 400px;
 }
 
@@ -77,7 +78,7 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px;
-    border: 2px dashed rgba(123, 224, 117, 0.3);
+    border: 2px dashed rgba(123, 224, 117, 0.4);
     border-radius: 10px;
     /* width: 450px;
     height: 125px; */
@@ -91,7 +92,7 @@ body {
 }
 
 #dropText {
-    color: rgba(123, 224, 117, 0.5);
+    color: rgba(123, 224, 117, 0.6);
     font-size: 14px;
 }
 
