@@ -21,6 +21,10 @@ function setMorph() {
     for (let i = 0; i<6; i++) {
         if (morph[i]) {
             let fraction = (time.getMilliseconds())/1000
+
+            if (reducedMotion) {
+                fraction = 1
+            }
             
             p2[i].style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
             p2[i].style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
@@ -145,7 +149,7 @@ function closeFirefoxPopup() {
     document.getElementById("firefoxPopup").style.top = "-400px"
 }
 
-if (navigator.userAgent.search("Firefox") > -1 && !noPopup) {
+if (navigator.userAgent.search("Firefox") > -1 && !noPopup && !reducedMotion) {
     document.getElementById("firefoxPopup").removeAttribute("hidden")
 }
 

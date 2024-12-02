@@ -1,11 +1,9 @@
-const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-
 let buttons = document.getElementsByClassName("cursorButton");
 let icons = document.getElementsByClassName("cursorIcon");
 let onButton = false;
 let onIcon = false;
 let hoveredElement = null;
-let animationDuration = isReduced ? 0 : 1;
+let animationDuration = reducedMotion ? 0 : 1;
 
 // Create and inject SVG filter
 const svgFilter = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
