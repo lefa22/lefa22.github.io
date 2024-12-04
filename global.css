@@ -1,15 +1,29 @@
 ::selection {
-    color: var(--gray-background);
-    background: var(--green-color);
+    color: var(--background);
+    background: var(--primary);
+}
+
+.dark-mode {
+    --primary: rgb(123, 224, 117);
+    --background: rgb(20, 20, 20);
+    --red: rgb(197, 89, 89);
+}
+
+.oled-mode {
+    --primary: rgb(123, 224, 117);
+    --background: rgb(0, 0, 0);
+    --red: rgb(197, 89, 89);
+}
+
+.light-mode {
+    --primary: rgb(14, 14, 14);
+    --background: rgb(228, 243, 227);
+    --red: rgb(143, 45, 45);
 }
 
 html {
     margin: 0px;
     padding: 0px;
-
-    --green-color: rgb(123, 224, 117);
-    --gray-background: rgb(20, 20, 20);
-    --red-error: rgb(197, 89, 89);
 }
 
 body {
@@ -17,10 +31,12 @@ body {
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
 
-    color: var(--green-color);
-    background-color: var(--gray-background);
+    color: var(--primary);
+    background-color: var(--background);
     height: 100vh;
     width: 100vw;
+
+    transition: color 250ms ease, background-color 250ms ease, border-color 250ms ease;
 }
 
 #cursorBox {
@@ -49,8 +65,9 @@ body {
 }
 
 a {
-    color: var(--green-color);
+    color: var(--primary);
     text-decoration: none;
+    transition: color 250ms ease;
 }
 
 #filter {
@@ -63,10 +80,18 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--gray-background);
+    color: black;
     font-size: 0px;
     transition: font-size 400ms ease;
-    text-shadow: 0px 0px 30px var(--green-color);
+    text-shadow: 0px 0px 30px var(--primary);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -82,4 +107,26 @@ a {
     body {
         transition: none !important;
     }
+}
+
+.noSelect {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+
+#theme-switcher {
+    position: absolute;
+    font-size: 20px;
+}
+
+#theme-switcher-icon {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 24
 }

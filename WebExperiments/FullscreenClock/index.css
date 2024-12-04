@@ -31,7 +31,7 @@
 }
 
 a {
-    color: rgb(123, 224, 117);
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ a {
 
 #popup {
 	position: relative;
-	background-color: rgba(0, 0, 0, 0.85);
+	background-color: color-mix(in srgb, var(--background) 80%, transparent);;
 	border-radius: 20px;
 	padding: 30px;
 	padding-right: 60px;
@@ -62,7 +62,7 @@ a {
 	opacity: 100%;
 	top: 0px;
 	transition: background-color 1000ms ease, top 1000ms ease, border 1000ms ease, box-shadow 1000ms ease;
-	border: 3px rgb(123, 224, 117) solid;
+	border: 3px var(--primary) solid;
 	box-shadow: 0px 0 30px rgb(20, 20, 20);
 }
 
@@ -128,7 +128,7 @@ a {
 	position: absolute;
 	top: 15px;
 	right: 15px;
-	color: white;
+	color: var(--primary);
 	cursor: pointer;
 }
 
@@ -161,4 +161,9 @@ a {
 
 #firefoxPopup span {
 	color: black;
+}
+
+#theme-switcher {
+    top: 25px;
+    right: 25px;
 }

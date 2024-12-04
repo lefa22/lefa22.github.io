@@ -60,11 +60,11 @@ p {
 
 #windowLocation {
     text-decoration-line: underline;
-    transition: color 200ms ease;
+    transition: color 250ms ease;
 }
 
 #windowLocation:hover {
-    color: var(--red-error);
+    color: var(--red);
 }
 
 #border {
@@ -73,8 +73,13 @@ p {
     top: 20px;
     z-index: -1;
 
-    border: 5px dashed var(--green-color);
+    border: 5px dashed var(--primary);
     border-radius: 20px;
     height: calc(100vh - 50px);
     width: calc(100vw - 50px);
+}
+
+#theme-switcher {
+    top: 40px;
+    right: 40px;
 }

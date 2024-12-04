@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
         <link href="index.css" rel="stylesheet">
         <link href="/global.css" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -14,7 +14,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
     </head>
-    <body>
+    <body class="dark-mode">
         <div id="container">
             <p id="p1"><span id="s1_1">0</span><span id="s1_2">0</span><span id="s1_3" class="points">:</span><span id="s1_4">0</span><span id="s1_5">0</span><span id="s1_6" class="points">:</span><span id="s1_7">0</span><span id="s1_8">0</span></p>
             <p id="p2"><span id="s2_1">0</span><span id="s2_2">0</span><span id="s2_3" class="points">:</span><span id="s2_4">0</span><span id="s2_5">0</span><span id="s2_6" class="points">:</span><span id="s2_7">0</span><span id="s2_8">0</span></p>
@@ -35,6 +35,9 @@
                     </div>
 
                 </div>
+            </div>
+            <div id="theme-switcher">
+                <span id="theme-switcher-icon" class="material-symbols-rounded cursorButton noSelect" onclick="switch_mode(this)">dark_mode</span>
             </div>
         </div>
         <div id="firefoxPopupContainer">
