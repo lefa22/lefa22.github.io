@@ -16,21 +16,26 @@ function getCookie(name) {
     return null;
 }
 
-function switch_mode(element, dont_switch=false) {
+function switch_mode(element, dont_switch=false, noCookie=false) {
     if (!dont_switch) {
         element.innerHTML = modes[(modes.indexOf(element.innerHTML) + 1) % modes.length];
     }
     if (element.innerHTML === "night_sight_max") {
+        document.body.classList.remove("light-mode");
         document.body.classList.remove("dark-mode");
         document.body.classList.add("oled-mode");
     } else if (element.innerHTML === "dark_mode") {
+        document.body.classList.remove("oled-mode");
         document.body.classList.remove("light-mode");
         document.body.classList.add("dark-mode");
     } else {
+        document.body.classList.remove("dark-mode");
         document.body.classList.remove("oled-mode");
         document.body.classList.add("light-mode");
     }
-    setCookie('theme', element.innerHTML, 365); // Saves for 1 year
+    if (!noCookie) {
+        setCookie('theme', element.innerHTML, 365); // Saves for 1 year
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,6 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         switch_mode(themeSwitcher, true);
     } else if (!prefersDark) {
         themeSwitcher.innerHTML = "light_mode";
-        switch_mode(themeSwitcher, true);
+        switch_mode(themeSwitcher, true, true);
     }
 });
