@@ -17,9 +17,15 @@ let mobile = false;
 
 
 function locationType(){
-    if( window.location.protocol == 'file:' ){ return 0; }
-    if( !window.location.host.replace( /localhost|127\.0\.0\.1/i, '' ) ){ return 2; }
-    return 1;
+    if (window.location.protocol === "file:") {
+      return 0;
+    } else if (
+      !window.location.host.replace(/(localhost|127\.0\.0\.1)(:\d+)?/i, "")
+    ) {
+      return 1;
+    } else {
+      return 2;
+    }
 }
 
 function checkOS(n) {
